@@ -1,6 +1,11 @@
 ## musinsa
 
-- 프로젝트 구조
+### 사용 기술
+
+- Retrofit2, Moshi, Hilt, Kotlin Flow
+- Coroutine, RecyclerView, MVVM
+
+### 프로젝트 구조
 
 ```bash
 ├── data
