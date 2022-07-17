@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="good"
+            type="com.homework.myapplication.data.model.Good" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/iv_item"
+            android:layout_width="127dp"
+            android:layout_height="127dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setImage="@{good.thumbnailURL}"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{good.brandName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_item"
+            tools:text="캐치볼" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:priceFormat="@{good.price}"
+            tools:text="61,600원" />
+
+        <TextView
+            android:id="@+id/tv_sale_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_coupon"
+            app:layout_constraintTop_toTopOf="@id/tv_price"
+            app:saleFormat="@{good.saleRate}"
+            tools:text="24%" />
+
+        <TextView
+            android:id="@+id/tv_coupon"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coupon_background"
+            android:gravity="center"
+            android:text="쿠폰"
+            android:textColor="@color/white"
+            android:visibility="@{good.hasCoupon == true ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_sale_rate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

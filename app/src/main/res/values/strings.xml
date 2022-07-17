@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="separator">/</string>
+    <string name="recommend_item">새로운 추천</string>
+    <string name="more_item">더보기</string>
+    <string name="all">전체</string>
+    <string name="one">1</string>
+</resources>

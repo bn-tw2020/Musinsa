@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="banner"
+            type="com.homework.myapplication.data.model.Banner" />
+
+        <variable
+            name="currentPage"
+            type="Integer" />
+
+        <variable
+            name="totalPage"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            setImage="@{banner.thumbnailURL}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_keyword"
+            style="@style/Subtitle1.Bold.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="@{banner.keyword}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Showcase" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Headline4.White"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@{banner.title}"
+            app:layout_constraintBottom_toTopOf="@id/tv_description"
+            app:layout_constraintStart_toStartOf="@id/tv_keyword"
+            tools:text="쿠어 21 S/S 신상품 한정 발매" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/Subtitle2.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@{banner.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_keyword"
+            tools:text="신상품 증정 이벤트" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
